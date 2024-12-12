@@ -80,9 +80,17 @@ class Forecast
         return $this;
     }
 
+    public function getTemperatureFahrenheit(): ?int{
+        return round(($this->getTemperatureCelsius() * 9 / 5) + 32);
+    }
+
     public function getFlTemperatureCelsius(): ?int
     {
         return $this->flTemperatureCelsius;
+    }
+
+    public function getFlTemperatureFahrenheit(): ?int{
+        return round(($this->getFlTemperatureCelsius() * 9 / 5) + 32);
     }
 
     public function setFlTemperatureCelsius(int $flTemperatureCelsius): static
